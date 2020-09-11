@@ -10,11 +10,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.BuildConfig.DEBUG
 import kotlinx.android.synthetic.main.fragment_second.*
-import kotlinx.android.synthetic.main.task_item_list.*
 import com.example.myapplication.database.Task as Task1
 
 /**
@@ -72,7 +69,7 @@ class SecondFragment : Fragment() {
 
                 }
             }
-            view.findViewById<Button>(R.id.button_second).setOnClickListener {
+            view.findViewById<Button>(R.id.btnErase).setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             }
         }
