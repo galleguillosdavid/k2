@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 private const val DATA_BASE_NAME = "task_db"
 
-@Database(entities = [Task::class],version = 1)
+@Database(entities = [Task::class],version = 2)
 abstract class TaskDatabase : RoomDatabase() {
 
     abstract fun getTaskDao(): TaskDao

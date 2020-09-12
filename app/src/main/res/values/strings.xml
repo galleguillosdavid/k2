@@ -8,6 +8,7 @@
     <string name="previous">Previo</string>
     <string name="hello_first_fragment">Hola primer Fragmento</string>
     <string name="hello_second_fragment">Hola Segundo Fragmento. Arg: %1$s</string>
+    <string name="checkLook"></string>
     <string name="textView1">Nombre del Item</string>
     <string name="textView2">Precio unitario</string>
     <string name="textView3">Cantidad</string>
@@ -17,6 +18,13 @@
     <string name="btnErase">Borrar</string>
     <string name="btnResum">Resumen</string>
     <string name="checkbox">¿Revisado?</string>
+    <string name="editTextTask"></string>
+    <string name="editTextTask2"></string>
+    <string name="editTextTask3"></string>
+    <string name="editTextTask4"></string>
+    <string name="editTextTask5"></string>
+
+
 
 
 

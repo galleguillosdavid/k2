@@ -46,22 +46,25 @@ class SecondFragment : Fragment() {
             mViewModel.getOneTaskById(it).observe(viewLifecycleOwner, Observer {
                 Log.d("OBJ_LIV", it.task)
                 editTextTask.setText(it.task)
-                checkBox.isChecked = it.completeTask
+       //         checkBox.isChecked = it.completeTask
             })
 
         }
 
         saveBtn.setOnClickListener() {
             val textTask = editTextTask.text.toString()
-            val checkBox = checkBox.isChecked
+       //     val checkBox = checkBox.isChecked
+            val name = editTextTask.text.toString()
 
             if (idTask != null) {
-                val mTask = Task1(task = textTask, completeTask = checkBox, id = idTask!!)
+                val mTask = Task1(task = textTask,  id = idTask!!,
+                    NameOfItem = name,Price = 0,Subtotal = 0,total = 0,
+                )
                 mViewModel.updateTask(mTask)
             } else {
 
                 if (textTask.isNotEmpty()) {
-                    val mTask = Task1(task = textTask, completeTask = checkBox)
+                    val mTask = Task1(task = textTask,  NameOfItem = name)
                     mViewModel.insertTask(mTask)
 
                 } else {
