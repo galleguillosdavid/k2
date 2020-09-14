@@ -9,11 +9,10 @@ data class Task (
                 @PrimaryKey(autoGenerate = true)
                 @NotNull
                 val id:Int=0,
-                val task: String,
-                //val completeTask: Boolean,
                 val NameOfItem: String,
+                val Cuantity: Int=0,
                 val Price: Int=0,
                 val Subtotal: Int=0,
-                val total: Int=0
+                val Total: Int=0
                 )
 

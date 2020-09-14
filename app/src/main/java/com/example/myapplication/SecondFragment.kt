@@ -28,7 +28,6 @@ class SecondFragment : Fragment() {
             idTask = it.getInt("id")
             Log.d("OBJ", idTask.toString())
         }
-
     }
 
     override fun onCreateView(
@@ -44,37 +43,39 @@ class SecondFragment : Fragment() {
 
         idTask?.let {
             mViewModel.getOneTaskById(it).observe(viewLifecycleOwner, Observer {
-                Log.d("OBJ_LIV", it.task)
-                editTextTask.setText(it.task)
-       //         checkBox.isChecked = it.completeTask
+                editTextTask.setText(it.NameOfItem)
+//                editTextTask2.setText(it.Price)
+//                editTextTask3.setText(it.Cuantity)
+//                editTextTask4.setText(it.Subtotal)
+//                editTextTask5.setText(it.Total)
             })
-
         }
 
-        saveBtn.setOnClickListener() {
-            val textTask = editTextTask.text.toString()
-       //     val checkBox = checkBox.isChecked
-            val name = editTextTask.text.toString()
+        btnSave.setOnClickListener() {
+            val name    = editTextTask.text.toString()
+            val cuanty     = Integer.valueOf(editTextTask3.text.toString())
+            val price: Int      = Integer.valueOf(editTextTask2.text.toString())
+            val subtotal: Int   = Integer.valueOf(editTextTask4.text.toString())
+            val total: Int      =Integer.valueOf(editTextTask5.text.toString())
 
             if (idTask != null) {
-                val mTask = Task1(task = textTask,  id = idTask!!,
-                    NameOfItem = name,Price = 0,Subtotal = 0,total = 0,
+                val mTask = Task1(
+                    id = idTask!!, NameOfItem = name, Cuantity = cuanty, Price = price, Subtotal = subtotal, Total = total,
                 )
                 mViewModel.updateTask(mTask)
             } else {
-
-                if (textTask.isNotEmpty()) {
-                    val mTask = Task1(task = textTask,  NameOfItem = name)
+                if (name.isNotEmpty()) {
+                    val mTask = Task1(NameOfItem = name, Cuantity = cuanty, Price = price, Subtotal = subtotal, Total = total,
+                    )
                     mViewModel.insertTask(mTask)
-
                 } else {
                     Toast.makeText(context, "No debe estar Vacio", Toast.LENGTH_SHORT).show()
-
                 }
             }
-            view.findViewById<Button>(R.id.btnErase).setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-            }
+            Toast.makeText(context, "Guardado en ${id}", Toast.LENGTH_SHORT).show()
+        }
+        btnResum.setOnClickListener {
+        findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
     }
 }

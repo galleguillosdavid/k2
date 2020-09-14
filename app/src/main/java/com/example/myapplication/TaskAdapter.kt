@@ -19,14 +19,15 @@ class TaskAdapter(var passTheData: PassTheData):RecyclerView.Adapter<TaskAdapter
     }
 
     inner class TaskViewHolder(itemView: View):RecyclerView.ViewHolder(itemView), View.OnClickListener{
-        val teskText     = itemView.tvName
-// deprecado        val checkTask    = itemView.checkLook
-        val idText       = itemView.tvId
+        val idText              = itemView.tvId
+        val viewHolderName      = itemView.tvName
+        val viewHolderCuantity  = itemView.tvCuantity
+        val viewHolderTotal     = itemView.tvTotal
+
         val itemView     = itemView.setOnClickListener(this)
         override fun onClick(v: View?) {
             passTheData.passTheData(dataList[adapterPosition])
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -36,17 +37,15 @@ class TaskAdapter(var passTheData: PassTheData):RecyclerView.Adapter<TaskAdapter
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
        val mTask: Task = dataList[position]
-        holder.teskText.text = mTask.task
-     //   holder.checkTask.isChecked = mTask.completeTask
-        holder.idText.text = mTask.id.toString()
+        holder.idText.text              = mTask.id.toString()
+        holder.viewHolderName.text      = mTask.NameOfItem
+        holder.viewHolderCuantity.text  = mTask.Cuantity.toString()
+        holder.viewHolderTotal.text     = mTask.Total.toString()
     }
 
     override fun getItemCount() = dataList.size
 
     interface PassTheData{
         fun passTheData(mTask: Task)
-
         }
-
     }
-

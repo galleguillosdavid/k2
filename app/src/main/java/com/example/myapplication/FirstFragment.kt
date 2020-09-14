@@ -59,7 +59,8 @@ class FirstFragment : Fragment(),TaskAdapter.PassTheData {
             findNavController().navigate((R.id.action_FirstFragment_to_SecondFragment))
         }
 
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
+      //  view.findViewById<Button>(R.id.btnCreate).setOnClickListener {
+        btnCreate.setOnClickListener{
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 
         }

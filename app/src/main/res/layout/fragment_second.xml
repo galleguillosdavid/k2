@@ -7,7 +7,7 @@
     tools:context=".SecondFragment">
 
     <Button
-        android:id="@+id/saveBtn"
+        android:id="@+id/btnSave"
         android:layout_width="95dp"
         android:layout_height="50dp"
         android:layout_marginBottom="29dp"
