@@ -12,14 +12,26 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_second.*
+import java.lang.Integer.toString
+import kotlin.Unit.toString
 import com.example.myapplication.database.Task as Task1
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
+
+
+
+
 class SecondFragment : Fragment() {
     lateinit var mViewModel: TaskViewModel
     private var idTask: Int? = null
+    var name: String    = ""
+    var cuanty: Int     = 0
+    var price: Int      = 0
+    var subtotal: Int   = 0
+    var total: Int      =0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,11 +64,11 @@ class SecondFragment : Fragment() {
         }
 
         btnSave.setOnClickListener() {
-            val name    = editTextTask.text.toString()
-            val cuanty     = Integer.valueOf(editTextTask3.text.toString())
-            val price: Int      = Integer.valueOf(editTextTask2.text.toString())
-            val subtotal: Int   = Integer.valueOf(editTextTask4.text.toString())
-            val total: Int      =Integer.valueOf(editTextTask5.text.toString())
+             name       = editTextTask.text.toString()
+             price      = Integer.valueOf(editTextTask2.text.toString())
+             cuanty     = Integer.valueOf(editTextTask3.text.toString())
+             subtotal   = Integer.valueOf(editTextTask4.text.toString())
+             total      = Integer.valueOf(editTextTask5.text.toString())
 
             if (idTask != null) {
                 val mTask = Task1(
@@ -77,5 +89,15 @@ class SecondFragment : Fragment() {
         btnResum.setOnClickListener {
         findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
+        btncalcular.setOnClickListener(){
+            cuanty         = Integer.valueOf(editTextTask3.text.toString())
+            price          = Integer.valueOf(editTextTask2.text.toString())
+//          val  res       = cuanty*price
+//          val resultado  = res.toString()
+//          editTextTask4.setText(resultado)
+            editTextTask4.setText((cuanty *price).toString())
+            editTextTask5.setText((cuanty *price).toString())
+        }
+
     }
 }
