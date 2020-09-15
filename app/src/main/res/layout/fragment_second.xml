@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextTask"
+        android:id="@+id/etNombre"
         android:layout_width="229dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -103,7 +103,7 @@
         tools:text="@string/editTextTask" />
 
     <EditText
-        android:id="@+id/editTextTask2"
+        android:id="@+id/etPrecio"
         android:layout_width="229dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -111,11 +111,11 @@
         android:autofillHints=""
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTask"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre"
         tools:text="@string/editTextTask2" />
 
     <EditText
-        android:id="@+id/editTextTask3"
+        android:id="@+id/etCantidad"
         android:layout_width="229dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -123,11 +123,11 @@
         android:autofillHints=""
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTask2"
+        app:layout_constraintTop_toBottomOf="@+id/etPrecio"
         tools:text="@string/editTextTask3" />
 
     <EditText
-        android:id="@+id/editTextTask4"
+        android:id="@+id/etSubtotal"
         android:layout_width="229dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -135,11 +135,11 @@
         android:autofillHints=""
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTask3"
+        app:layout_constraintTop_toBottomOf="@+id/etCantidad"
         tools:text="@string/editTextTask4" />
 
     <EditText
-        android:id="@+id/editTextTask5"
+        android:id="@+id/etTotal"
         android:layout_width="229dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -147,7 +147,7 @@
         android:autofillHints=""
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTask4"
+        app:layout_constraintTop_toBottomOf="@+id/etSubtotal"
         tools:text="@string/editTextTask5" />
 
     <Button
